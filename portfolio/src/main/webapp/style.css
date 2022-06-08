@@ -1,3 +1,9 @@
+html {
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+body{
+    background-color: #AAAAAA;
+}
 #content {
   margin-left: auto;
   margin-right: auto;
