@@ -1,9 +1,9 @@
 html {
     font-family: "Lucida Console", "Courier New", monospace;
+    color: white;
+    background-image: url('images/background-image.png');
 }
-body{
-    background-color: #AAAAAA;
-}
+
 #content {
   margin-left: auto;
   margin-right: auto;
@@ -12,4 +12,14 @@ body{
 
 #greeting-container {
   margin-top: 20px;
+}
+h1 {
+    font-size: 50px;
+}
+h2 {
+    line-height: 0.5em;
+    font-size: 40px;
+}
+.navbar {
+    background-color: cornflowerblue;
 }
