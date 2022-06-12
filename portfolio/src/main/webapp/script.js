@@ -14,7 +14,7 @@
 
 let index = 0;
 let text = "TorrinCurry.is()";
-let speed = 250; //milliseconds
+let speed = 200; //milliseconds
 /**
  * Creates a typing animation.
  */
@@ -23,7 +23,7 @@ function write() {
         //grab contents of element and concat with text
         document.getElementById("page-one-heading").innerHTML += text.charAt(index);
         index++;
-        //execute write function after 350 milliseconds 
+        //execute write function after 200 milliseconds 
         setTimeout(write, speed);
     }
 } //write
@@ -33,3 +33,15 @@ function cursorEffect() {
 } //cursorEffect
 
 window.onload = write;
+
+async function getTextFromServer() {
+    //send request to Servlet, wait for response object
+    const responseFromServer = await fetch("/hello");
+    //grab text from response
+    const textFromResponse = await responseFromServer.text();
+
+    //get <p> container to hold our text
+    const para = document.getElementById("response-container");
+    //insert response
+    para.innerHTML = textFromResponse;
+}

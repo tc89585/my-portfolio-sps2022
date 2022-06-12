@@ -5,7 +5,7 @@
     font-family: sans-serif;
 }
 
-section {
+.page-one, .page-two, .page-three {
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -29,4 +29,11 @@ section {
 }
 .page-three {
     background: rgb(67, 91, 175);
+}
+
+.page-four {
+    height: 100vh;
+    background-color: bisque;
+    color: black;
+    scroll-snap-align: start;
 }
