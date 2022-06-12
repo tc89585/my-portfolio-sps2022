@@ -12,17 +12,24 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+let index = 0;
+let text = "TorrinCurry.is()";
+let speed = 250; //milliseconds
 /**
- * Adds a random greeting to the page.
+ * Creates a typing animation.
  */
-function addRandomGreeting() {
-  const greetings =
-      ['Hello world!', '¡Hola Mundo!', '你好，世界！', 'Bonjour le monde!'];
+function write() {
+    if (index < text.length) {
+        //grab contents of element and concat with text
+        document.getElementById("page-one-heading").innerHTML += text.charAt(index);
+        index++;
+        //execute write function after 350 milliseconds 
+        setTimeout(write, speed);
+    }
+} //write
 
-  // Pick a random greeting.
-  const greeting = greetings[Math.floor(Math.random() * greetings.length)];
+function cursorEffect() {
+    
+} //cursorEffect
 
-  // Add it to the page.
-  const greetingContainer = document.getElementById('greeting-container');
-  greetingContainer.innerText = greeting;
-}
+window.onload = write;

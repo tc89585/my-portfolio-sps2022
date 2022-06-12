@@ -1,25 +1,32 @@
-html {
-    font-family: "Lucida Console", "Courier New", monospace;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: white;
-    background-image: url('images/background-image.png');
+    scroll-snap-align: start;
 }
 
-#content {
-  margin-left: auto;
-  margin-right: auto;
-  width: 650px;
+.container {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+
 }
 
-#greeting-container {
-  margin-top: 20px;
+.page-one {
+    background: rgb(36, 164, 138);
 }
-h1 {
-    font-size: 50px;
+.page-two {
+    background: rgb(211, 79, 79);
 }
-h2 {
-    line-height: 0.5em;
-    font-size: 40px;
-}
-.navbar {
-    background-color: cornflowerblue;
+.page-three {
+    background: rgb(67, 91, 175);
 }
