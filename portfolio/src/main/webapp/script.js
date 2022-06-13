@@ -35,7 +35,7 @@ function cursorEffect() {
 window.onload = write;
 
 async function getTextFromServer() {
-    //send request to Servlet, wait for response object
+    //make a get request at the /hello URL
     const responseFromServer = await fetch("/hello");
     const jsonObject = await responseFromServer.json();
     

@@ -36,4 +36,53 @@
     background-color: bisque;
     color: black;
     scroll-snap-align: start;
+    display: block;
+}
+
+.form-container {
+    margin: 0;
+    padding: 0;
+    width: 500px;
+    background-color: #fff;
+    box-shadow: 0 0 20px 0 #999;
+    top: 50%;
+    left: 50%; 
+    transform: translate(-50%,-70%);
+    position: relative;
+}
+
+form {
+    margin: 35px;
+}
+
+.input-field {
+    width: 400px;
+    height: 40px;
+    margin-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid #777;
+    border-radius: 14px;
+    outline: none;
+}
+
+.input-field.textarea-field {
+    height: 150px;
+    padding-top: 10px;
+}
+
+.btn, #request-button {
+    border-radius: 20px;
+    color: #fff;
+    margin-top: 18px;
+    padding: 10px;
+    background-color: #47c35a;
+    font-size: 12px;
+    border: none;
+    cursor: pointer;
+}
+
+.picture-container {
+    height: 100vh;
+    background-image: url("./images/thankYou-blur.jpg");
 }
