@@ -37,11 +37,11 @@ window.onload = write;
 async function getTextFromServer() {
     //send request to Servlet, wait for response object
     const responseFromServer = await fetch("/hello");
-    //grab text from response
-    const textFromResponse = await responseFromServer.text();
+    const jsonObject = await responseFromServer.json();
+    
+    const repsonseContainer = document.getElementById("response-container");
 
-    //get <p> container to hold our text
-    const para = document.getElementById("response-container");
-    //insert response
-    para.innerHTML = textFromResponse;
+    repsonseContainer.innerHTML = jsonObject[Math.floor(Math.random() * 3)];
 }
+
+
