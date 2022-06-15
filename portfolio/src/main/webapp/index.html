@@ -4,24 +4,52 @@
     <meta charset="UTF-8">
     <title>My Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script src="script.js"></script> 
   </head>
   <body>
-    <div id="content">
-      <h1>Torrin Curry</h1>
-      <div id="greeting-container">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Georgia_Athletics_logo.svg/1280px-Georgia_Athletics_logo.svg.png" 
-                alt="1280px-Georgia_Athletics_logo" width="200" height="200">
-            <h2>About</h2>
-            <p>My name is Torrin, and I'm a computer science student at <a href="https://www.uga.edu/"><strong>THE</strong> University of Georgia</a> and I'm from
-                    Stone Mountain, Ga.
-            </p>
-            <h2>Projects</h2>
-            <h2>Images</h2>
-            <a href="https://www.linkedin.com/in/torrin-curry-860008225/"> 
-                <img src="images/Linkedin-Logo.png" width="150" height="150">
+    <div class="container">
+        <section class="page-one">
+            <h1 id="page-one-heading"></h1>
+            <a href="https://www.linkedin.com/in/torrin-curry-860008225/" target="_blank"> 
+                <img src="images/Linkedin-Logo.png" width="150" height="100">
             </a>
-      </div>
+        </section>
+
+        <section class="page-two">
+            <h1>About Me</h1>
+            <p>
+                Hi, I'm Torrin Curry, a third year Computer Science student at The 
+                University of Georgia. Go Dawgs!
+            </p>
+        </section>
+
+        <section class="page-three">
+            <h1>Projects</h1>
+        </section>
+
+        <section class="page-four">
+            <h1>Simple Request and Response Demonstration using a Java Servlet and Javascript</h1>
+            <p>
+                <button id="request-button" onclick="getTextFromServer()">
+                    Random Server Message
+                </button>
+            </p>
+
+            <p id="response-container">
+                
+            </p>
+            <div class="form-container">
+                <form action="/form-handler" method="POST"">
+                    <input type="text" class="input-field" name="name-field" placeholder="Name" required>
+                    <input type="text" class="input-field" name="email-field" placeholder="Email" required>
+                    <input type="text" class="input-field" name="subject-field" placeholder="Subject" required>
+                    <textarea type="text" class="input-field textarea-field" name="message-field" placeholder="Message" required></textarea>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+                 
+            </div>
+        </section>
+
     </div>
   </body>
 </html>
