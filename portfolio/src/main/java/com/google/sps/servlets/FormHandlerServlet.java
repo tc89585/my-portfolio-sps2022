@@ -5,6 +5,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import com.google.cloud.datastore.Datastore;
+import com.google.cloud.datastore.DatastoreOptions;
+import com.google.cloud.datastore.Entity;
+import com.google.cloud.datastore.FullEntity;
+import com.google.cloud.datastore.KeyFactory;
+import com.google.cloud.datastore.Key;
+
 
 //handle POST requests for the /form-handler URL
 @WebServlet("/form-handler")
@@ -19,19 +26,26 @@ public class FormHandlerServlet extends HttpServlet {
     String subjectValue = request.getParameter("subject-field");
     String messageValue = request.getParameter("message-field");
 
-    String serverLogValue = "the server received:" + "\n" + 
-                            "name: " + nameValue + "\n" +
-                            "email: " + emailValue + "\n" + 
-                            "subject: " + subjectValue + "\n" +
-                            "message: " + messageValue + "\n";
+    //instance of datastore
+    Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
+    //set the KIND of the key
+    KeyFactory keyFactory = datastore.newKeyFactory().setKind("Form");
+  
+    //create entitiy with a key
+    FullEntity formSubmissionEntity = 
+        Entity.newBuilder(keyFactory.newKey())
+        //set the properties
+        .set("name", nameValue)
+        .set("email", emailValue)
+        .set("subject", subjectValue)
+        .set("message", messageValue)
+        .build();
 
-    // Print the value so you can see it in the server logs.
-    //stores in server logs. can be viewed on google log explorer
-    System.out.println("submitted: " + "\n" + serverLogValue);
+    //store entity
+    datastore.put(formSubmissionEntity);
 
-    // Write the value to the response so the user can see it.
-    //response.getWriter().println("You submitted: " + serverLogValue);
-    response.sendRedirect("https://tcurry-sps-summer22.appspot.com/thanks.html");
+    //redirect to home
+    response.sendRedirect("https://tcurry-sps-summer22.appspot.com");
   }
 
 
