@@ -18,7 +18,7 @@ let speed = 200; //milliseconds
 /**
  * Creates a typing animation.
  */
-function write() {
+const write = () => {
     if (index < text.length) {
         //grab contents of element and concat with text
         document.getElementById("page-one-heading").innerHTML += text.charAt(index);
@@ -28,20 +28,27 @@ function write() {
     }
 } //write
 
-function cursorEffect() {
+/**
+ * Displays blinking cursor effect.
+ */
+const cursorEffect = () => {
     
 } //cursorEffect
 
 window.onload = write;
 
-async function getTextFromServer() {
-    //make a get request at the /hello URL
-    const responseFromServer = await fetch("/hello");
-    const jsonObject = await responseFromServer.json();
-    
-    const repsonseContainer = document.getElementById("response-container");
+/**
+ * View a list of received messages from datastore, hiding personal info.
+ * 
+ * postCondition: display html page of received messages
+ */
+const viewReceivedMessages = async () => {
+    const response = await fetch('/list-responses');
+    const json = await response.json();
 
-    repsonseContainer.innerHTML = jsonObject[Math.floor(Math.random() * 3)];
+    const messageContainer = document.getElementById('response-container');
+
+    messageContainer.innerHTML = JSON.stringify(json);
 }
 
 

@@ -71,7 +71,7 @@ form {
     padding-top: 10px;
 }
 
-.btn, #request-button {
+.btn, #messages-button {
     border-radius: 20px;
     color: #fff;
     margin-top: 18px;
@@ -85,4 +85,8 @@ form {
 .picture-container {
     height: 100vh;
     background-image: url("./images/thankYou-blur.jpg");
+}
+
+.page-four h1 {
+    justify-content: center;
 }

@@ -10,7 +10,7 @@ import com.google.cloud.datastore.DatastoreOptions;
 import com.google.cloud.datastore.Entity;
 import com.google.cloud.datastore.FullEntity;
 import com.google.cloud.datastore.KeyFactory;
-import com.google.cloud.datastore.Key;
+
 
 
 //handle POST requests for the /form-handler URL
@@ -47,6 +47,7 @@ public class FormHandlerServlet extends HttpServlet {
     //redirect to home
     response.sendRedirect("https://tcurry-sps-summer22.appspot.com");
   }
+
 
 
 }//FormHandlerServlet
