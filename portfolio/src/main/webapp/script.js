@@ -48,6 +48,7 @@ const viewReceivedMessages = async () => {
 
     const messageContainer = document.getElementById('response-container');
 
+    
     messageContainer.innerHTML = JSON.stringify(json);
 }
 
